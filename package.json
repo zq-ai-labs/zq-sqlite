@@ -1,0 +1,39 @@
+{
+  "name": "zq-sqlite",
+  "version": "0.1.0",
+  "description": "SQLite for ZQ DSH plugins on Node's built-in node:sqlite: one database file per plugin, Kysely queries, migrations with backups, Chinese-aware full-text search",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zq-ai-labs/zq-sqlite.git"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "pnpm run build && node --test test/*.test.mjs",
+    "check": "tsc --noEmit"
+  },
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "dependencies": {
+    "kysely": "0.29.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.3"
+  }
+}
